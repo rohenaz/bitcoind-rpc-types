@@ -18,7 +18,10 @@ declare module "bitcoind-rpc" {
 
     getRawTransaction(
       tx: string,
-      callback: (err: Error, transaction: { result: string }) => string
+      callback: (
+        err: Error,
+        transaction: { result: string }
+      ) => Promise<void> | void
     ): void;
   }
 }
